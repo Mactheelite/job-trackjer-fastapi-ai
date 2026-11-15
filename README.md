@@ -21,17 +21,15 @@ This starts PostgreSQL using the `postgres:17-alpine` image.
 | Setting  | Value            |
 |----------|------------------|
 | Host     | `127.0.0.1`      |
-| Port     | `5433`           |
-| User     | `Macsmith`       |
-| Password | `Macsmith#1`     |
+| Port     | `5432`           |
+| User     | `mac`            |
+| Password | `Macsmith`       |
 | Database | `jobtracker_db`  |
-
-Host port `5433` maps to Postgres `5432` inside the container (local Postgres often already uses `5432`).
 
 Connection URL:
 
 ```text
-postgresql://Macsmith:Macsmith%231@127.0.0.1:5433/jobtracker_db
+postgresql://mac:Macsmith@127.0.0.1:5432/jobtracker_db
 ```
 
 ### Useful commands
@@ -44,7 +42,7 @@ docker compose ps
 docker compose logs -f db
 
 # Open a Postgres shell
-docker compose exec db psql -U Macsmith -d jobtracker_db
+docker compose exec db psql -U mac -d jobtracker_db
 
 # Inside psql, check the server version
 # SELECT version();
